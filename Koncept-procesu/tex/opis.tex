@@ -1,0 +1,36 @@
+\section{Opis procesu}
+
+\subsection{Oczekiwany efekt}
+Proces ma na celu sprzedaż co najmniej jednego biletu na wydarzenie kulturalne
+użytkownikowi aplikacji mobilnej w ramach usług systemu \emph{Concerto}.
+
+\subsection{Zarys scenariusza głównego}
+Lista zawiera główne kroki przypadku użycia, wokół którego stworzymy model
+procesu biznesowego. Oznaczyliśmy miejsca ewentualnych rozgałęzień do
+scenariuszy pobocznych wraz z powodem ich zajścia. Opis ścieżek alternatywnych
+pominęliśmy, z nastawieniem, że zajmiemy się nimi szczegółowo później.
+\begin{enumerate}[noitemsep]
+    \item System sprawdza dostępność biletów na wydarzenie.
+    \item Aplikacja wyświetla przycisk dla akcji kupna biletów, jeżeli są one
+        dostępne. (\textbf{Rozgałęzienie:} Biletów brakuje.)
+    \item Użytkownik potwierdza chęć kupna biletu na wydarzenie.
+    \item Użytkownik podaje liczbę biletów, które chce zamówić.
+        (\textbf{Rozgałęzienie:} Dostępnych biletów jest za mało.)
+    \item (Krok opcjonalny) Użytkownik wybiera miejsca siedzące, jeżeli impreza
+        na to pozwala.
+    \item System pokazuje potwierdzenie zamówienia, wypełnione danymi przed
+        chwilą zebranymi i danymi podanymi jako domyślne w ustawieniach
+        aplikacji:
+        \begin{itemize}[nosep]
+            \item czas i miejsce koncertu,
+            \item liczbę i miejsca biletów,
+            \item cena,
+            \item dane osobowe kupującego i do wysyłki,
+            \item metoda płatności.
+        \end{itemize}
+    \item Użytkownik wyraża zgodę na dokonanie zakupu. (\textbf{Rozgałęzienie:}
+        Użytkownik nie zgadza się.)
+    \item System dokonuje zakupu w imieniu użytkownika.
+    \item System zleca wysłanie biletów, zgodnie z danymi z potwierdzenia.
+    \item Koniec.
+\end{enumerate}

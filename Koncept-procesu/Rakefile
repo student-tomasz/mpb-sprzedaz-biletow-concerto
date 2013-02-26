@@ -31,7 +31,7 @@ task :show => $output do
 end
 
 task :publish => $output do
-  sh "mv #{$output} #{$published_output}"
+  sh "cp #{$output} #{$published_output}"
 end
 
 task :clean do
